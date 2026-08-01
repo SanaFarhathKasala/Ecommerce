@@ -101,15 +101,3 @@ Add screenshots of:
 - Email Notifications
 
 ---
-
-## 👨‍💻 Author
-
-**Pavan**
-
-GitHub: https://github.com/ppavan06ui
-
----
-
-## 📄 License
-
-This project is created for educational and learning purposes.
