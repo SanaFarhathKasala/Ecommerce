@@ -1,0 +1,12 @@
+{
+  "name": "vortex-ecommerce",
+  "version": "1.0.0",
+  "description": "Vortex - A premium E-Commerce client template built with HTML5, CSS3, JavaScript and Firebase.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y serve .",
+    "dev": "npx -y serve ."
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

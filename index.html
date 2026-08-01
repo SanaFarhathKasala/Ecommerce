@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vortex E-Commerce - Premium Shopping Experience</title>
+  <meta name="description" content="Shop the latest premium electronics, accessories, and fashion gear on Vortex. Experience sleek interfaces, real-time updates, and fast checkout.">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+  <!-- App Header -->
+  <header>
+    <div class="header-container">
+      <a href="#home" class="logo" id="logo-link">
+        <i class="fa-solid fa-cube"></i> Vortex
+      </a>
+      
+      <!-- Search Component -->
+      <div class="search-bar-container">
+        <input type="text" class="search-input" id="search-input" placeholder="Search premium gear, accessories, electronics...">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      </div>
+      
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        
+        <!-- Cart Trigger -->
+        <button class="cart-trigger" id="cart-trigger" aria-label="Open shopping cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+        </button>
+        
+        <!-- User Profile/Auth State -->
+        <div id="auth-state-container">
+          <!-- Rendered dynamically via JS -->
+          <button class="auth-btn auth-btn-primary" onclick="location.hash='#auth'">Sign In</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Category Bar -->
+  <div class="category-bar">
+    <div class="category-container" id="category-container">
+      <a href="#home" class="category-tab active" data-category="All">All Products</a>
+      <a href="#home" class="category-tab" data-category="Electronics">Electronics</a>
+      <a href="#home" class="category-tab" data-category="Accessories">Accessories</a>
+    </div>
+  </div>
+
+  <!-- Dynamic Page/View Shell -->
+  <main id="app-view">
+    <!-- Rendered dynamically by app.js -->
+    <div class="spinner"></div>
+  </main>
+
+  <!-- Shopping Cart Side Drawer -->
+  <div class="cart-drawer-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h2>Shopping Cart</h2>
+      <button class="cart-drawer-close" id="cart-close" aria-label="Close cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="cart-drawer-items" id="cart-drawer-items">
+      <!-- Items dynamically populated -->
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Shipping</span>
+        <span style="color: var(--success-color); font-weight: 600;">FREE</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Total</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <button class="checkout-btn" id="drawer-checkout-btn">
+        <i class="fa-solid fa-credit-card"></i> Proceed to Checkout
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3 class="logo" style="margin-bottom: 1rem;"><i class="fa-solid fa-cube"></i> Vortex</h3>
+        <p>Your one-stop premium shopping destination for cutting-edge gadgets and sleek design accessories. Built with love and modern tech stacks.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Shop Categories</h3>
+        <div class="footer-links">
+          <a href="#home" onclick="window.setCategory('Electronics')">Electronics</a>
+          <a href="#home" onclick="window.setCategory('Accessories')">Accessories</a>
+          <a href="#home">All Products</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Customer Support</h3>
+        <div class="footer-links">
+          <a href="#">Contact Us</a>
+          <a href="#">Shipping Policy</a>
+          <a href="#">Returns & Exchanges</a>
+          <a href="#">FAQs</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Stay Connected</h3>
+        <p style="margin-bottom: 1rem;">Subscribe to receive updates, access to exclusive deals, and more.</p>
+        <div style="display: flex; gap: 0.5rem;">
+          <input type="email" placeholder="Enter email" style="padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--surface-secondary); color: var(--text-color); flex: 1;">
+          <button style="background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600;">Join</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Vortex E-Commerce. All rights reserved.</p>
+      <div style="display: flex; gap: 1.5rem; font-size: 1.2rem;">
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Scripts -->
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
